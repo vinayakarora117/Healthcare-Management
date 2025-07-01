@@ -27,17 +27,17 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>29f8c4a3479222104bebe454116d4384</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>Lab Test</sys_name>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>All Lab Test</sys_name>
         <sys_overrides/>
         <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
         <sys_policy/>
         <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
         <sys_update_name>sys_app_module_29f8c4a3479222104bebe454116d4384</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-28 14:50:16</sys_updated_on>
+        <sys_updated_on>2025-07-01 14:50:49</sys_updated_on>
         <timeline_page/>
-        <title>Lab Test</title>
+        <title>All Lab Test</title>
         <uncancelable>false</uncancelable>
         <view_name/>
         <window_name/>
