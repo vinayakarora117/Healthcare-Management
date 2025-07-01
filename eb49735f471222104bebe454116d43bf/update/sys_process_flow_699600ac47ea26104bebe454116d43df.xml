@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_process_flow">
+    <sys_process_flow action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition table="u_ward">u_status=active^EQ<item display_value="Active" endquery="false" field="u_status" goto="false" newquery="false" operator="=" or="false" value="active"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
+        <description/>
+        <label>Active</label>
+        <name>Ward Flow</name>
+        <order>10</order>
+        <sys_class_name>sys_process_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-01 17:13:06</sys_created_on>
+        <sys_id>699600ac47ea26104bebe454116d43df</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Ward Flow</sys_name>
+        <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+        <sys_update_name>sys_process_flow_699600ac47ea26104bebe454116d43df</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-01 17:13:06</sys_updated_on>
+        <table>u_ward</table>
+    </sys_process_flow>
+</record_update>

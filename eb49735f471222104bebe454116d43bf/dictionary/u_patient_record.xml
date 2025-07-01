@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element audit="true" db_object_id="aeba3313475222104bebe454116d43b5" label="Patient" max_length="40" name="u_patient_record" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Internal Notes" max_length="4000" name="u_journal_1" type="journal"/>
         <element attributes="edge_encryption_enabled=true" choice="3" default="new" label="Status" mandatory="true" max_length="40" name="u_status" type="string">
             <choice>
                 <element inactive_on_update="false" label="In Progress" sequence="1" value="in progress"/>
@@ -8,5 +9,8 @@
                 <element inactive_on_update="false" label="Discharged" sequence="3" value="discharged"/>
             </choice>
         </element>
+        <element attributes="edge_encryption_enabled=true" label="Priority History" max_length="4000" name="u_priority_history" type="journal"/>
+        <element attributes="edge_encryption_enabled=true" label="Escalation Status" max_length="40" name="u_escalation_status" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Internal Notes" max_length="40" name="u_internal_notes" type="journal_input"/>
     </element>
 </database>
