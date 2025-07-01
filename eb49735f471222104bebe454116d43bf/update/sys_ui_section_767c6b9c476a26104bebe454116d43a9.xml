@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="767c6b9c476a26104bebe454116d43a9" sys_domain="global" table="u_patient_record" version="3" view="Supervisor_View">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>process_flow.xml</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-07-01 15:18:39</sys_created_on>
+            <sys_id>0b7cab9c476a26104bebe454116d4314</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter display_value="Process Flow">06222b50476a26104bebe454116d4379</sys_ui_formatter>
+            <sys_ui_section caption="NULL" display_value="" name="u_patient_record" sys_domain="global" view="367c6b9c476a26104bebe454116d43a5">767c6b9c476a26104bebe454116d43a9</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-07-01 15:18:39</sys_updated_on>
+            <sys_user/>
+            <type>formatter</type>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>u_patient_record</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-07-01 15:18:38</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>767c6b9c476a26104bebe454116d43a9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>u_patient_record</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+            <sys_update_name>sys_ui_section_767c6b9c476a26104bebe454116d43a9</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-07-01 15:18:38</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Supervisor View" name="Supervisor_View">367c6b9c476a26104bebe454116d43a5</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>
