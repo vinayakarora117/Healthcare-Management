@@ -9,6 +9,7 @@
                 <element inactive_on_update="false" label="Discharged" sequence="3" value="discharged"/>
             </choice>
         </element>
+        <element default="0" label="Age" mandatory="true" max_length="40" name="u_age" type="integer"/>
         <element attributes="edge_encryption_enabled=true" label="Priority History" max_length="4000" name="u_priority_history" type="journal"/>
         <element attributes="edge_encryption_enabled=true" label="Escalation Status" max_length="40" name="u_escalation_status" type="string"/>
         <element attributes="edge_encryption_enabled=true" label="Internal Notes" max_length="40" name="u_internal_notes" type="journal_input"/>

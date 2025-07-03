@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_fix">
+    <sys_script_fix action="INSERT_OR_UPDATE">
+        <before>false</before>
+        <description>to get the sum of all billing amounts</description>
+        <name>Sumofbilling</name>
+        <record_for_rollback>true</record_for_rollback>
+        <script><![CDATA[(function()
+{
+	var grSum = new GlideAggregate('u_billing');
+	grSum.addAggregate('SUM','u_total_amount');
+	grSum.groupBy('u_patient_id');
+	grSum.query();
+
+	while(grSum.next())
+	{
+		gs.print('The total amount is' + grSum.getAggregate('SUM','u_total_amount'));
+	}
+})();]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-03 16:55:27</sys_created_on>
+        <sys_id>c1c59a4947eae6104bebe454116d4392</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>Sumofbilling</sys_name>
+        <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+        <sys_update_name>sys_script_fix_c1c59a4947eae6104bebe454116d4392</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-03 17:18:41</sys_updated_on>
+        <unloadable>false</unloadable>
+    </sys_script_fix>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>c1c59a4947eae6104bebe454116d4392</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-03 16:55:27</sys_created_on>
+        <sys_id>68d51e4947eae6104bebe454116d43b9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-03 16:55:27</sys_updated_on>
+        <table>sys_script_fix</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
