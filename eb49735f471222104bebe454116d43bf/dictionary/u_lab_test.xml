@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="no_attachment=true" audit="true" db_object_id="0efaf713475222104bebe454116d4398" extends="task" label="Lab Test" max_length="40" name="u_lab_test" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Test Results" max_length="40" name="u_test_results" type="string"/>
+    </element>
+</database>
