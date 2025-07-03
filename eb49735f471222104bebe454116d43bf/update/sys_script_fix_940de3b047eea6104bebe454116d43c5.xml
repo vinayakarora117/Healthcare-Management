@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_fix">
+    <sys_script_fix action="INSERT_OR_UPDATE">
+        <before>false</before>
+        <description/>
+        <name>question6</name>
+        <record_for_rollback>true</record_for_rollback>
+        <script><![CDATA[var grpr = new GlideRecord("u_room");
+grpr.query();
+
+while(grpr.hasNext()){
+	gs.print('Room ID:' +grpr.getValue("u_room_number")+ 'Bed Count:' + grpr.u_bed_count);
+}
+]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-03 04:38:23</sys_created_on>
+        <sys_id>940de3b047eea6104bebe454116d43c5</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>question6</sys_name>
+        <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+        <sys_update_name>sys_script_fix_940de3b047eea6104bebe454116d43c5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-03 06:02:54</sys_updated_on>
+        <unloadable>false</unloadable>
+    </sys_script_fix>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>940de3b047eea6104bebe454116d43c5</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-03 04:38:23</sys_created_on>
+        <sys_id>2b1debb047eea6104bebe454116d43f8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-03 04:38:23</sys_updated_on>
+        <table>sys_script_fix</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

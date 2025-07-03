@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_fix">
+    <sys_script_fix action="INSERT_OR_UPDATE">
+        <before>false</before>
+        <description/>
+        <name>question4</name>
+        <record_for_rollback>true</record_for_rollback>
+        <script><![CDATA[(function() {
+    var patientID = 'PAT0001010';
+    var patientGR = new GlideRecord('u_patient_record');
+    patientGR.addQuery('u_number', patientID);
+    patientGR.query();
+
+    if (patientGR.next()) {
+        var patientSysId = patientGR.getUniqueValue();
+
+        var labTT = new GlideRecord('u_lab_test');
+        labTT.addQuery('u_patient', patientSysId);  
+        labTT.query();
+
+        if (!labTT.hasNext()) {
+            gs.print('No lab tests for this patient.');
+        } else {
+            while (labTT.next()) {
+                gs.print('Lab Test: ' + labTT.u_test_results);
+            }
+        }
+    } else {
+        gs.print('Patient not found with ID: ' + patientID);
+    }
+})();
+]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-02 18:11:54</sys_created_on>
+        <sys_id>2b0dd13c4726a6104bebe454116d43d3</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>question4</sys_name>
+        <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+        <sys_update_name>sys_script_fix_2b0dd13c4726a6104bebe454116d43d3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-03 05:52:29</sys_updated_on>
+        <unloadable>false</unloadable>
+    </sys_script_fix>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>2b0dd13c4726a6104bebe454116d43d3</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-02 18:11:54</sys_created_on>
+        <sys_id>2abd55fc4726a6104bebe454116d4307</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-02 18:11:54</sys_updated_on>
+        <table>sys_script_fix</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
