@@ -2,42 +2,45 @@
     <sys_script_fix action="INSERT_OR_UPDATE">
         <before>false</before>
         <description/>
-        <name>Averageoffield</name>
+        <name>containsnikalna</name>
         <record_for_rollback>true</record_for_rollback>
-        <script><![CDATA[(function() {
-    var gravg = new GlideAggregate('u_patient_record');
-	gravg.groupBy('u_age1');
-    gravg.addAggregate('AVG','u_age1');
-	gravg.query();
+        <script><![CDATA[(function()
+{
+	var patientID = 'PAT0001010';
+	var grinc = new GlideRecord('u_patient_record');
+	grinc.query();
 
-	if(gravg.next())
+	while(grinc.next())
 	{
-		gs.print('The average age is ' + gravg.getAggregate('AVG','u_age1'));
+		var app = new GlideRecord('u_appointment');
+		grinc.addQuery('u_number','CONTAINS','patientID');
+		grinc.query();
+
+		gs.print('The appointments are '+ u_number);
 	}
-  
 })();]]></script>
         <sys_class_name>sys_script_fix</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-07-03 17:28:52</sys_created_on>
-        <sys_id>66ac1a81472ee6104bebe454116d43b3</sys_id>
-        <sys_mod_count>12</sys_mod_count>
-        <sys_name>Averageoffield</sys_name>
+        <sys_created_on>2025-07-04 06:01:50</sys_created_on>
+        <sys_id>13a80915472a2a104bebe454116d437a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>containsnikalna</sys_name>
         <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
         <sys_policy/>
         <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
-        <sys_update_name>sys_script_fix_66ac1a81472ee6104bebe454116d43b3</sys_update_name>
+        <sys_update_name>sys_script_fix_13a80915472a2a104bebe454116d437a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-04 05:36:33</sys_updated_on>
+        <sys_updated_on>2025-07-04 06:01:50</sys_updated_on>
         <unloadable>false</unloadable>
     </sys_script_fix>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
-        <id>66ac1a81472ee6104bebe454116d43b3</id>
+        <id>13a80915472a2a104bebe454116d437a</id>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-07-03 17:28:52</sys_created_on>
-        <sys_id>c27dd6c1472ee6104bebe454116d43c6</sys_id>
+        <sys_created_on>2025-07-04 06:01:50</sys_created_on>
+        <sys_id>f7c94115472a2a104bebe454116d43c8</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-03 17:28:52</sys_updated_on>
+        <sys_updated_on>2025-07-04 06:01:50</sys_updated_on>
         <table>sys_script_fix</table>
         <use_es_latest>true</use_es_latest>
     </sys_es_latest_script>
