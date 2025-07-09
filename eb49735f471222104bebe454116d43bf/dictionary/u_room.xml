@@ -8,6 +8,10 @@
                 <element inactive_on_update="false" label="Available" sequence="1" value="available"/>
             </choice>
         </element>
+        <element attributes="encode_utf8=false" label="Assign Bed" max_length="32" name="u_assign_bed" reference="u_beds" type="reference"/>
         <element attributes="edge_encryption_enabled=true" label="Last Cleaned Date" mandatory="true" max_length="40" name="u_last_cleaned_data" type="glide_date"/>
+        <index name="index">
+            <element name="u_assign_bed"/>
+        </index>
     </element>
 </database>

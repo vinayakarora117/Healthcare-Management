@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_fix">
+    <sys_script_fix action="DELETE">
+        <before>false</before>
+        <description/>
+        <name>question1agg</name>
+        <record_for_rollback>true</record_for_rollback>
+        <script><![CDATA[var agg = new GlideAggregate('incident');
+agg.addAggregate('COUNT');
+agg.groupBy('priority');
+agg.query();
+
+while (agg.next()) {
+    var priority = agg.getValue('priority');
+    var count = agg.getAggregate('COUNT');
+    gs.print('Priority: ' + priority + ' | Count: ' + count);
+}]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-03 16:53:30</sys_created_on>
+        <sys_id>b94516c547eae6104bebe454116d43e1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>question1agg</sys_name>
+        <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+        <sys_update_name>sys_script_fix_b94516c547eae6104bebe454116d43e1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-03 16:53:30</sys_updated_on>
+        <unloadable>false</unloadable>
+    </sys_script_fix>
+    <sys_es_latest_script action="DELETE">
+        <id>b94516c547eae6104bebe454116d43e1</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-03 16:53:29</sys_created_on>
+        <sys_id>bf555a4947eae6104bebe454116d434f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-03 16:53:29</sys_updated_on>
+        <table>sys_script_fix</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</application>
+        <file_path/>
+        <instance_id>e468f672fb1866dc0921f633beefdcfe</instance_id>
+        <instance_name>dev302623</instance_name>
+        <name>sys_script_fix_b94516c547eae6104bebe454116d43e1</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_fix"&gt;&lt;sys_script_fix action="INSERT_OR_UPDATE"&gt;&lt;before&gt;false&lt;/before&gt;&lt;description/&gt;&lt;name&gt;question1agg&lt;/name&gt;&lt;record_for_rollback&gt;true&lt;/record_for_rollback&gt;&lt;script&gt;&lt;![CDATA[var agg = new GlideAggregate('incident');
+agg.addAggregate('COUNT');
+agg.groupBy('priority');
+agg.query();
+
+while (agg.next()) {
+    var priority = agg.getValue('priority');
+    var count = agg.getAggregate('COUNT');
+    gs.print('Priority: ' + priority + ' | Count: ' + count);
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_fix&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-03 16:53:30&lt;/sys_created_on&gt;&lt;sys_id&gt;b94516c547eae6104bebe454116d43e1&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;question1agg&lt;/sys_name&gt;&lt;sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf"&gt;eb49735f471222104bebe454116d43bf&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Healthcare Management "&gt;eb49735f471222104bebe454116d43bf&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_fix_b94516c547eae6104bebe454116d43e1&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-03 16:53:30&lt;/sys_updated_on&gt;&lt;unloadable&gt;false&lt;/unloadable&gt;&lt;/sys_script_fix&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id&gt;b94516c547eae6104bebe454116d43e1&lt;/id&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-03 16:53:29&lt;/sys_created_on&gt;&lt;sys_id&gt;bf555a4947eae6104bebe454116d434f&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-03 16:53:29&lt;/sys_updated_on&gt;&lt;table&gt;sys_script_fix&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>38691263</payload_hash>
+        <record_name>question1agg</record_name>
+        <reverted_from/>
+        <source>5b20064147aae6104bebe454116d4309</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-03 16:53:30</sys_created_on>
+        <sys_id>f3551e4947eae6104bebe454116d43b6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197d13523c40000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-03 16:53:30</sys_updated_on>
+        <type>Fix Script</type>
+        <update_guid>b7551e49d5eae610d8fbd043c3fab1b5</update_guid>
+        <update_guid_history>b7551e49d5eae610d8fbd043c3fab1b5:38691263</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-03 16:55:06</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_fix">sys_script_fix</sys_db_object>
+        <sys_id>2dd48ce5fa8b4aaaa87f3ba49bdf9864</sys_id>
+        <sys_metadata>b94516c547eae6104bebe454116d43e1</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>question1agg</sys_name>
+        <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+        <sys_scope_delete display_value="">777693b6033f4472835f22a0c4fb6961</sys_scope_delete>
+        <sys_update_name>sys_script_fix_b94516c547eae6104bebe454116d43e1</sys_update_name>
+        <sys_update_version display_value="sys_script_fix_b94516c547eae6104bebe454116d43e1">f3551e4947eae6104bebe454116d43b6</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-03 16:55:06</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

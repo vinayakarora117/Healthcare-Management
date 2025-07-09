@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" db_object_id="8e6af7df471222104bebe454116d43b5" extends="task" label="Appointment" max_length="40" name="u_appointment" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Patient Summary" max_length="1000" name="u_patient_summary" read_only="true" type="string"/>
+    </element>
+</database>
