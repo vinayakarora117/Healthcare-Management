@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_in_email_action">
+    <sysevent_in_email_action action="INSERT_OR_UPDATE">
+        <action>record_action</action>
+        <active>true</active>
+        <assignment_operator/>
+        <condition_script/>
+        <description/>
+        <event_name>email.read</event_name>
+        <filter_condition table="sys_email">subjectSTARTSWITHBilling Inquiry^EQ<item endquery="false" field="subject" goto="false" newquery="false" operator="STARTSWITH" or="false" value="Billing Inquiry"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <from/>
+        <name>Billing Inquiry</name>
+        <order>-150</order>
+        <reply_email/>
+        <required_roles/>
+        <script><![CDATA[(function runAction(current, event, email, logger, classifier) {
+    try {
+        var emailBody = email.body_text || '';
+
+        var patientIdMatch = emailBody.match(/Patient ID:\s*(PAT\d+)/i);
+        var amountMatch = emailBody.match(/Amount:\s*(\d+)/i);
+        var statusMatch = emailBody.match(/Status:\s*(.+)/i);
+
+        var patientId = patientIdMatch ? patientIdMatch[1].trim() : null;
+        var amount = amountMatch ? amountMatch[1].trim() : null;
+        var status = statusMatch ? statusMatch[1].trim() : null;
+
+        // Debug extracted values
+        gs.log("Patient ID: " + patientId + ", Amount: " + amount + ", Status: " + status);
+
+        if (!patientId || !amount || !status) {
+            email.reply("Missing Patient ID, Amount, or Status in email.");
+            return;
+        }
+
+        var patient = new GlideRecord('u_patient_record');
+        patient.addQuery('u_number', patientId);
+        patient.query();
+
+        if (!patient.next()) {
+            email.reply("❌ Patient not found: " + patientId);
+            return;
+        }
+
+        gs.log("✅ Found patient: " + patientId + ", sys_id = " + patient.sys_id);
+
+        var billing = new GlideRecord('u_billing');
+        billing.addQuery('u_reference_2', patient.sys_id);
+        billing.query();
+
+        if (billing.next()) {
+            billing.u_currency_3 = amount;
+            billing.u_reference_4 = status;
+            billing.update();
+
+            gs.log("✅ Billing updated for patient " + patientId);
+            email.reply("✅ Billing updated:\nPatient ID: " + patientId + "\nAmount: ₹" + amount + "\nStatus: " + status);
+        } else {
+            email.reply("⚠️ No billing record found for Patient ID: " + patientId);
+        }
+
+    } catch (e) {
+        email.reply("⚠️ Error occurred: " + e.message);
+        gs.error("Billing Inquiry Script Error: " + e.message);
+    }
+})(current, event, email, logger, classifier);
+]]></script>
+        <stop_processing>true</stop_processing>
+        <sys_class_name>sysevent_in_email_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 05:22:37</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>fb4305a3476222104bebe454116d436a</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Billing Inquiry</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+        <sys_update_name>sysevent_in_email_action_fb4305a3476222104bebe454116d436a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 05:44:06</sys_updated_on>
+        <table>u_billing</table>
+        <template/>
+        <type>new</type>
+    </sysevent_in_email_action>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>fb4305a3476222104bebe454116d436a</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 05:22:37</sys_created_on>
+        <sys_id>21f30527476222104bebe454116d43f7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 05:22:37</sys_updated_on>
+        <table>sysevent_in_email_action</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

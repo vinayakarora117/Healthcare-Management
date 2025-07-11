@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_in_email_action">
+    <sysevent_in_email_action action="INSERT_OR_UPDATE">
+        <action>record_action</action>
+        <active>true</active>
+        <assignment_operator/>
+        <condition_script/>
+        <description/>
+        <event_name>email.read</event_name>
+        <filter_condition table="sys_email">subjectLIKEAppointment Request^EQ<item endquery="false" field="subject" goto="false" newquery="false" operator="LIKE" or="false" value="Appointment Request"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <from/>
+        <name>Create Appointment</name>
+        <order>-50</order>
+        <reply_email/>
+        <required_roles/>
+        <script><![CDATA[(function runAction(current, event, email, logger, classifier) {
+    try {
+        var emailBody = email.body_text || '';
+
+        var patientIdMatch = emailBody.match(/Patient ID:\s*(PAT\d+)/);
+        var appointmentDateMatch = emailBody.match(/Appointment Date:\s*(\d{4}-\d{2}-\d{2})[ T](\d{2}:\d{2}:\d{2})/);
+        var departmentMatch = emailBody.match(/Department:\s*(.+)/); // now supports multiple words
+
+        var patientId = patientIdMatch ? patientIdMatch[1] : null;
+        var appointmentDate = appointmentDateMatch ? (appointmentDateMatch[1] + ' ' + appointmentDateMatch[2]) : null;
+        var department = departmentMatch ? departmentMatch[1].trim() : null;
+
+        if (!patientId || !appointmentDate || !department) {
+            throw new Error("Missing required appointment data in the email body.");
+        }
+
+        var patient = new GlideRecord('u_patient_record');
+        patient.addQuery('u_number', patientId);
+        patient.query();
+        if (!patient.next()) {
+            gs.error("Patient not found for ID: " + patientId);
+            return;
+        }
+
+        var newAppointment = new GlideRecord('u_appointment');
+        newAppointment.initialize();
+
+        newAppointment.u_patient_id = patient.sys_id; // Reference field to patient table
+        newAppointment.u_appointment_date = appointmentDate;
+        newAppointment.u_department = department;
+        newAppointment.u_status = 'Scheduled';
+
+        newAppointment.insert();
+
+        logger.log('Appointment successfully created for Patient ID: ' + patientId);
+        gs.info("Appointment created for patient ID: " + patientId);
+    } catch (e) {
+        gs.error("Error processing email: " + e.message);
+    }
+})(current, event, email, logger, classifier);
+]]></script>
+        <stop_processing>true</stop_processing>
+        <sys_class_name>sysevent_in_email_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-10 11:59:44</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b4f4191347e622104bebe454116d4383</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Create Appointment</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+        <sys_update_name>sysevent_in_email_action_b4f4191347e622104bebe454116d4383</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-10 13:48:07</sys_updated_on>
+        <table>u_appointment</table>
+        <template/>
+        <type>new</type>
+    </sysevent_in_email_action>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>b4f4191347e622104bebe454116d4383</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-10 11:59:43</sys_created_on>
+        <sys_id>78455d9747e622104bebe454116d43c9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-10 11:59:43</sys_updated_on>
+        <table>sysevent_in_email_action</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
