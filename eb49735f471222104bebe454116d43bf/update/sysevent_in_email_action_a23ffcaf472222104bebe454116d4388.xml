@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_in_email_action">
+    <sysevent_in_email_action action="INSERT_OR_UPDATE">
+        <action>record_action</action>
+        <active>true</active>
+        <assignment_operator/>
+        <condition_script/>
+        <description/>
+        <event_name>email.read</event_name>
+        <filter_condition table="sys_email">subjectLIKERefill Request^EQ<item endquery="false" field="subject" goto="false" newquery="false" operator="LIKE" or="false" value="Refill Request"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <from/>
+        <name>Medication Refill </name>
+        <order>-100</order>
+        <reply_email/>
+        <required_roles/>
+        <script><![CDATA[(function runAction(current, event, email, logger, classifier) {
+    try {
+        var emailBody = email.body_text || '';
+
+        // Extract data from email body using RegEx
+        var patientIdMatch = emailBody.match(/Patient ID:\s*(PAT\d+)/i);
+        var medNameMatch = emailBody.match(/Medication Name:\s*(.+)/i);
+        var dosageMatch = emailBody.match(/Dosage:\s*(.+)/i);
+        var frequencyMatch = emailBody.match(/Frequency:\s*(.+)/i);
+
+        // Assign extracted values safely
+        var patientId = patientIdMatch ? patientIdMatch[1].trim() : null;
+        var medicationName = medNameMatch ? medNameMatch[1].trim() : null;
+        var dosage = dosageMatch ? dosageMatch[1].trim() : null;
+        var frequency = frequencyMatch ? frequencyMatch[1].trim() : null;
+
+        // Validate
+        if (!patientId || !medicationName || !dosage || !frequency) {
+            logger.error("Missing one or more required fields from email.");
+            return;
+        }
+
+        // Find the patient by ID
+        var patient = new GlideRecord('u_patient_record');
+        patient.addQuery('u_number', patientId);
+        patient.query();
+
+        if (!patient.next()) {
+            logger.error("No patient found with ID: " + patientId);
+            return;
+        }
+
+        // Create new medication record
+        var med = new GlideRecord('u_medication');
+        med.initialize();
+
+        med.u_patient_id = patient.sys_id;  // Reference field to patient
+        med.u_medication_name = medicationName;
+        med.u_dosage = dosage;
+        med.u_frequency = frequency;
+
+        med.insert();
+
+        email.reply("Medication refill request has been received for " + medicationName + ".");
+        logger.log("Medication refill record created for patient: " + patientId);
+
+    } catch (e) {
+        logger.error("Error in Medication Refill script: " + e.message);
+    }
+})(current, event, email, logger, classifier);
+]]></script>
+        <stop_processing>true</stop_processing>
+        <sys_class_name>sysevent_in_email_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 05:05:23</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a23ffcaf472222104bebe454116d4388</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Medication Refill </sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+        <sys_update_name>sysevent_in_email_action_a23ffcaf472222104bebe454116d4388</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 05:18:26</sys_updated_on>
+        <table>u_medication</table>
+        <template/>
+        <type>new</type>
+    </sysevent_in_email_action>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>a23ffcaf472222104bebe454116d4388</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 05:05:23</sys_created_on>
+        <sys_id>050081ef472222104bebe454116d4311</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 05:05:23</sys_updated_on>
+        <table>sysevent_in_email_action</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
