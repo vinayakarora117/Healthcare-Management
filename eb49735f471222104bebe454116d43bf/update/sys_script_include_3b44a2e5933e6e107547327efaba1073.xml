@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>global.LabTestUtilsPractice </api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>LabTestUtilsPractice </name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var LabTestUtilsPractice  = Class.create();
+LabTestUtilsPractice .prototype = {
+    initialize: function() {
+    },
+
+	resultByID:function(id){
+		var gr=new GlideRecord('u_lab_test');
+		if(gr.get(id)){
+			return u_test_results;
+		}
+		return 'No result';
+	},
+
+	resultReady:function(id){
+		var gr=new GlideRecord('u_lab_test');
+		if(gr.get(id)){
+			return !!gr.u_test_results;
+		}
+		return false;
+	},
+
+	testByPatientId:function(id){
+		var result =[];
+		var gr=new GlideRecord('u_lab_test');
+		gr.addQuery('u_patient_id',id);
+		gr.query();
+		while(gr.get(id)){
+			result.push({
+				sys_id:gr.getUniqueValue(),
+			    status:gr.u_status,
+				result:gr.u_results,
+				date:gr.u_scheduled_date.getDisplayValue(),
+			});
+		}
+		return result;
+	},
+
+	testByDetails:function(date){
+		var result=[];
+		var gr=new GlideRecord('u_lab_test');
+		gr.addQuery('u_scheduled_date','STARTSWITH',date);
+		gr.query();
+		while(gr.next()){
+			result.push({
+				sys_id:gr.getUniqueValue()+'',
+			    status: gr.u_status+'',
+			    result:gr.u_results+'',
+			    date:gr.u_scheduled_date ? gr.u_scheduled_date.getDisplayValue():' '
+		    });
+	    }
+		return result;
+	},
+
+    type: 'LabTestUtilsPractice '
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-17 18:32:05</sys_created_on>
+        <sys_id>3b44a2e5933e6e107547327efaba1073</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>LabTestUtilsPractice </sys_name>
+        <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+        <sys_update_name>sys_script_include_3b44a2e5933e6e107547327efaba1073</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-17 18:32:05</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>3b44a2e5933e6e107547327efaba1073</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-17 18:32:04</sys_created_on>
+        <sys_id>98323e65933e6e107547327efaba102b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-17 18:32:04</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

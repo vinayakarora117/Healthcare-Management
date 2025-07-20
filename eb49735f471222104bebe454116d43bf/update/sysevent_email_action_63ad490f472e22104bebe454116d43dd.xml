@@ -44,7 +44,7 @@
         <order>100</order>
         <push_message_only>false</push_message_only>
         <recipient_fields/>
-        <recipient_groups name="VipSupportTeam">a750418f47ea22104bebe454116d436b</recipient_groups>
+        <recipient_groups>a750418f47ea22104bebe454116d436b</recipient_groups>
         <recipient_users>6816f79cc0a8016401c5a33be04be441,dhruvsinghal8941893@gmail.com</recipient_users>
         <reply_to/>
         <send_self>true</send_self>

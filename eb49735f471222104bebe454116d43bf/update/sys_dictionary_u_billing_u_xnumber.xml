@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_dictionary action="INSERT_OR_UPDATE" element="" table="u_beds">
+    <sys_dictionary action="INSERT_OR_UPDATE" element="u_xnumber" table="u_billing">
         <active>true</active>
         <array>false</array>
         <attributes/>
         <audit>false</audit>
-        <calculation><![CDATA[(function calculatedFieldValue(current) {
-
-	// Add your code here
-	return '';  // return the calculated value
-
-})(current);]]></calculation>
-        <choice/>
+        <calculation/>
+        <choice>0</choice>
         <choice_field/>
         <choice_table/>
-        <column_label/>
+        <column_label>Xnumber</column_label>
         <comments/>
         <create_roles/>
         <default_value/>
@@ -26,16 +21,16 @@
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element/>
+        <element>u_xnumber</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <formula/>
         <function_definition/>
         <function_field>false</function_field>
-        <internal_type display_value="Collection">collection</internal_type>
-        <mandatory>false</mandatory>
+        <internal_type display_value="Integer">integer</internal_type>
+        <mandatory>true</mandatory>
         <max_length>40</max_length>
-        <name>u_beds</name>
+        <name>u_billing</name>
         <next_element/>
         <primary>false</primary>
         <read_only>false</read_only>
@@ -51,14 +46,14 @@
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-07-08 10:50:11</sys_created_on>
-        <sys_name>u_beds</sys_name>
+        <sys_created_on>2025-07-19 07:00:05</sys_created_on>
+        <sys_name>Xnumber</sys_name>
         <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
         <sys_policy/>
         <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
-        <sys_update_name>sys_dictionary_u_beds_NULL</sys_update_name>
+        <sys_update_name>sys_dictionary_u_billing_u_xnumber</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-08 10:50:11</sys_updated_on>
+        <sys_updated_on>2025-07-19 07:09:06</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -71,18 +66,4 @@
         <write_roles/>
         <xml_view>false</xml_view>
     </sys_dictionary>
-    <sys_claim action="INSERT_OR_UPDATE">
-        <claim_owner_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</claim_owner_scope>
-        <claim_timestamp>197f0871c460000001</claim_timestamp>
-        <metadata_update_name>sys_dictionary_u_beds_NULL</metadata_update_name>
-        <previous_claim_app_version>1.0.0</previous_claim_app_version>
-        <previous_claim_name>Healthcare Management </previous_claim_name>
-        <previous_claim_scope>eb49735f471222104bebe454116d43bf</previous_claim_scope>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-07-09 18:51:15</sys_created_on>
-        <sys_id>17d969cf47ae22104bebe454116d43bf</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-09 18:51:15</sys_updated_on>
-    </sys_claim>
 </record_update>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element audit="true" db_object_id="c47b3753475222104bebe454116d43f3" label="Room" max_length="40" name="u_room" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Last Cleaned Date" mandatory="true" max_length="40" name="u_last_cleaned_data" type="glide_date"/>
         <element attributes="edge_encryption_enabled=true" choice="3" default="new" label="Status" max_length="40" name="u_status" type="string">
             <choice>
-                <element inactive_on_update="false" label="Occupied" sequence="2" value="occupied"/>
                 <element inactive_on_update="false" label="Under Maintenance" sequence="3" value="under maintenance"/>
-                <element inactive_on_update="false" label="New" sequence="0" value="new"/>
                 <element inactive_on_update="false" label="Available" sequence="1" value="available"/>
+                <element inactive_on_update="false" label="Occupied" sequence="2" value="occupied"/>
+                <element inactive_on_update="false" label="New" sequence="0" value="new"/>
             </choice>
         </element>
         <element attributes="encode_utf8=false" label="Assign Bed" max_length="32" name="u_assign_bed" reference="u_beds" type="reference"/>
-        <element attributes="edge_encryption_enabled=true" label="Last Cleaned Date" mandatory="true" max_length="40" name="u_last_cleaned_data" type="glide_date"/>
         <index name="index">
             <element name="u_assign_bed"/>
         </index>
