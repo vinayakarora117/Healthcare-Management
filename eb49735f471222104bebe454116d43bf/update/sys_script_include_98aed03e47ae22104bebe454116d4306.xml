@@ -29,14 +29,14 @@ InsuranceUtils.prototype = {
         return result;
     },
 
-    isActive: function(policySysId) {
+    activePolicy: function(id) {
         var gr = new GlideRecord('u_insurance');
-        if (gr.get(policySysId)) {
-            var expiry = gr.u_expiry_date;
-            return expiry && expiry >= new GlideDate();
+        if (gr.get(id)) {
+            return gr.u_status == 'active';
         }
         return false;
     },
+
 
     fetchById: function(policySysId) {
         var gr = new GlideRecord('u_insurance');
@@ -67,20 +67,19 @@ InsuranceUtils.prototype = {
     },
 
     type: 'InsuranceUtils'
-};
-]]></script>
+};]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-08 18:44:38</sys_created_on>
         <sys_id>98aed03e47ae22104bebe454116d4306</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>InsuranceUtils</sys_name>
         <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
         <sys_policy/>
         <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
         <sys_update_name>sys_script_include_98aed03e47ae22104bebe454116d4306</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-08 19:11:08</sys_updated_on>
+        <sys_updated_on>2025-07-21 01:17:45</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>98aed03e47ae22104bebe454116d4306</id>

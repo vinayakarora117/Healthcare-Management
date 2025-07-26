@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>global.BillingUtilsX</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>BillingUtilsX</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var BillingUtilsX = Class.create();
+BillingUtilsX.prototype = {
+    initialize: function() {
+    },
+
+	billingAmount:function(id){
+		var total=0;
+		var gr=new GlideRecord('u_billing');
+		gr.addQuery('u_patient_id',id);
+		gr.query();
+		while(gr.next()){
+			var amount=parseFloat(gr.u_total_amount);
+			if(!isNaN(amount)){
+				return total+=amount;
+			}else {
+            gs.warn('Invalid billing amount found for record: ' + gr.getDisplayValue('number'));
+        }
+		}
+		return total;
+	},
+
+	recordOverdue:function(id){
+		var gr=new GlideRecord('u_billing');
+		if(gr.get(id)){
+			return gr.u_status=='overdue';
+		}return false;
+	},
+
+	detailsById:function(id){
+		var result=[];
+		var gr=new GlideRecord('u_billing');
+		if(gr.get(id)){
+			result.push({
+				sys_id:gr.getUniqueValue(),
+				total_amount:gr.u_total_amount+'',
+				patient_id:gr.u_patient_id+'',
+				status:gr.u_status+''
+			});
+		}
+		return result;
+	},
+
+	recordsByPatient:function(id){
+		var result=[];
+		var gr=new GlideRecord('u_billing');
+		gr.addQuery('u_patient_id',id);
+		gr.query();
+		while(gr.get(id)){
+			result.push({
+				sys_id:gr.getUniqueValue(),
+				total_amount:gr.u_total_amount+'',
+				status:gr.u_status+''
+			});
+		}
+		return result;
+	},
+	
+    type: 'BillingUtilsX'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-21 01:01:19</sys_created_on>
+        <sys_id>4f23efe693fae2507547327efaba10f5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>BillingUtilsX</sys_name>
+        <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+        <sys_update_name>sys_script_include_4f23efe693fae2507547327efaba10f5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-21 01:01:19</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>4f23efe693fae2507547327efaba10f5</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-21 01:01:19</sys_created_on>
+        <sys_id>d708eb6a93fae2507547327efaba1074</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-21 01:01:19</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

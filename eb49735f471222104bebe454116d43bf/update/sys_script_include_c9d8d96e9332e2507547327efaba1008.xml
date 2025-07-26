@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>global.AppointmentUtilsX</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>AppointmentUtilsX</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var AppointmentUtilsX = Class.create();
+AppointmentUtilsX.prototype = {
+    initialize: function() {
+    },
+
+	appointmentPatient:function(id){
+		var gr=new GlideRecord('u_appointment');
+		var result=[];
+		gr.addQuery('u_patient_id',id);
+		gr.query();
+		while(gr.next()){
+			result.push({
+				sys_id:gr.getUniqueValue(),
+				date:gr.u_appointment_date+'',
+				department:gr.u_department+'',
+				status:gr.u_status
+			});
+		}
+		return result;
+	},
+
+	confirmedAppointment:function(id){
+		var gr=new GlideRecord('u_appointment');
+		if(gr.get(id)){
+			return gr.u_status=='confirmed';
+		}
+		return flase;
+	},
+
+	detailsById:function(id){
+		var result=[];
+		var gr=new GlideRecord('u_appointment');
+		if(gr.get(id)){
+			result.push({
+				sys_id:gr.getUniqueValue(),
+				date:gr.u_appointment_date.getDisplayValue()+'',
+				status:gr.u_status+''
+			});
+		}
+		return result;
+	},
+
+	appointmentByDate:function(date){
+		var result=[];
+		var gr=new GlideRecord('u_appointment');
+		gr.addQuery('u_appointment_date','STARTSWITH',date);
+		gr.query();
+		while(gr.next()){
+			result.push({
+				sys_id:gr.getUniqueValue(),
+				department:gr.u_department+'',
+				date:gr.u_appointment_date.getDisplayValue()+'',
+				status:gr.u_status,
+			});
+		}
+		return result;
+	},
+
+	appointByDepartment:function(departmentName){
+		var result=[];
+		var gr=new GlideRecord('u_appointment');
+		gr.addQuery('u_department',departmentName);
+		gr.query();
+		while(gr.next()){
+			result.push({
+                sys_id: gr.getUniqueValue(),
+                date: gr.u_appointment_date.getDisplayValue(),
+                patient: gr.u_patient_id.getDisplayValue()
+		});
+	}return result;
+	},
+	
+    type: 'AppointmentUtilsX'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-20 17:53:27</sys_created_on>
+        <sys_id>c9d8d96e9332e2507547327efaba1008</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AppointmentUtilsX</sys_name>
+        <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+        <sys_update_name>sys_script_include_c9d8d96e9332e2507547327efaba1008</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-20 17:53:27</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>c9d8d96e9332e2507547327efaba1008</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-20 17:53:27</sys_created_on>
+        <sys_id>3f1642a293f2e2507547327efaba10e3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-20 17:53:27</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

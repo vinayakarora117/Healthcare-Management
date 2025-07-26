@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element audit="true" db_object_id="d3da3713475222104bebe454116d43eb" extends="task" label="Medication" max_length="40" name="u_medication" type="collection">
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Status" max_length="40" name="u_choice_1" type="string">
+            <choice>
+                <element inactive_on_update="false" label="In Progress" sequence="1" value="in progress"/>
+                <element inactive_on_update="false" label="Prescribe" sequence="2" value="prescribe"/>
+                <element inactive_on_update="false" label="Completed" sequence="3" value="completed"/>
+                <element inactive_on_update="false" label="New" sequence="0" value="new"/>
+            </choice>
+        </element>
         <element label="Available" max_length="40" name="u_available" type="boolean"/>
         <element attributes="edge_encryption_enabled=true" choice="1" label="Medications" mandatory="true" max_length="40" name="u_medications" type="string">
             <choice>

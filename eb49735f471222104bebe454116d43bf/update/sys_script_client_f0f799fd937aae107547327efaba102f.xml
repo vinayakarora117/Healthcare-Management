@@ -11,23 +11,24 @@
         <name>Question4</name>
         <order/>
         <script><![CDATA[function onSubmit() {
-   //Type appropriate comment here, and begin script below
-   var teststatus=g_form.getValue('u_status');
-   var result=g_form.getValue('u_test_results');
-   if(teststatus=='completed' && results==' '){
-	g_form.addErrorMessage('Please enter the result');
-	return false;
-   }
-   g_form.addInfoMessage('The result is updated');
-   return true;
-}]]></script>
+    var status = g_form.getValue('u_status');
+    var results = g_form.getValue('u_results');
+
+    if (status.toLowerCase() === 'completed' && !results) {
+        g_form.showFieldMsg('u_results', 'Results are required when status is Completed.', 'error');
+        return false; 
+    }
+
+    return true; 
+}
+]]></script>
         <sys_class_name>sys_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-18 06:51:20</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f0f799fd937aae107547327efaba102f</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>Question4</sys_name>
         <sys_overrides/>
         <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
@@ -35,7 +36,7 @@
         <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
         <sys_update_name>sys_script_client_f0f799fd937aae107547327efaba102f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-18 06:51:20</sys_updated_on>
+        <sys_updated_on>2025-07-22 23:25:12</sys_updated_on>
         <table>u_lab_test</table>
         <type>onSubmit</type>
         <ui_type>0</ui_type>

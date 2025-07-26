@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_process_flow">
+    <sys_process_flow action="DELETE">
+        <active>true</active>
+        <condition table="u_appointment">u_status=overdue^EQ<item display_value="Overdue" endquery="false" field="u_status" goto="false" newquery="false" operator="=" or="false" value="overdue"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
+        <description/>
+        <label>Overdue </label>
+        <name>Appointment Flow </name>
+        <order>70</order>
+        <sys_class_name>sys_process_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-23 11:36:25</sys_created_on>
+        <sys_id>ce9c48e393bae6507547327efaba10d8</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Appointment Flow </sys_name>
+        <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+        <sys_update_name>sys_process_flow_ce9c48e393bae6507547327efaba10d8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-23 11:36:45</sys_updated_on>
+        <table>u_appointment</table>
+    </sys_process_flow>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</application>
+        <file_path/>
+        <instance_id>34a1faef3b102e90c55a348aa4e45a70</instance_id>
+        <instance_name>dev305907</instance_name>
+        <name>sys_process_flow_ce9c48e393bae6507547327efaba10d8</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_process_flow"><sys_process_flow action="INSERT_OR_UPDATE"><active>true</active><condition table="u_appointment">u_status=overdue^EQ<item display_value="Overdue" endquery="false" field="u_status" goto="false" newquery="false" operator="=" or="false" value="overdue"/><item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/></condition><description/><label>Overdue </label><name>Appointment Flow </name><order>70</order><sys_class_name>sys_process_flow</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-07-23 11:36:25</sys_created_on><sys_id>ce9c48e393bae6507547327efaba10d8</sys_id><sys_mod_count>1</sys_mod_count><sys_name>Appointment Flow </sys_name><sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package><sys_policy/><sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope><sys_update_name>sys_process_flow_ce9c48e393bae6507547327efaba10d8</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-07-23 11:36:45</sys_updated_on><table>u_appointment</table></sys_process_flow></record_update>]]></payload>
+        <payload_hash>448366527</payload_hash>
+        <record_name>Appointment Flow </record_name>
+        <reverted_from/>
+        <source>13f573ab932626107547327efaba100d</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-23 11:36:45</sys_created_on>
+        <sys_id>76accca393bae6507547327efaba10f4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>198371255800000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-23 11:36:45</sys_updated_on>
+        <type>Flow Formatter</type>
+        <update_guid>faaccca303bae6505d96ca062bba51f3</update_guid>
+        <update_guid_history>faaccca303bae6505d96ca062bba51f3:448366527,829c48e33abae65042643b56a56720da:418125506</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-23 11:45:28</sys_created_on>
+        <sys_db_object display_value="" name="sys_process_flow">sys_process_flow</sys_db_object>
+        <sys_id>6fdccca9cb8c43a2bf219b6c62626eb9</sys_id>
+        <sys_metadata>ce9c48e393bae6507547327efaba10d8</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Appointment Flow </sys_name>
+        <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+        <sys_scope_delete display_value="">777693b6033f4472835f22a0c4fb6961</sys_scope_delete>
+        <sys_update_name>sys_process_flow_ce9c48e393bae6507547327efaba10d8</sys_update_name>
+        <sys_update_version display_value="sys_process_flow_ce9c48e393bae6507547327efaba10d8">76accca393bae6507547327efaba10f4</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-23 11:45:28</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

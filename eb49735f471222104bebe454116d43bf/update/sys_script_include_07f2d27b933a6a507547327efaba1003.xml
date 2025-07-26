@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>global.Day4_server_side</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>Day4_server_side</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var Day4_server_side = Class.create();
+Day4_server_side.prototype = {
+    initialize: function() {},
+    allAppointmentForAPatient: function(id) {
+        var gra = new GlideRecord('u_appointment');
+        gra.addQuery('u_patient_id', id);
+        gra.query();
+        while (gra.get(id)) {
+            gs.print(gra.getDisplayValue('number'));
+        }
+    },
+
+    statusToCancelled: function(id) {
+        var gr = new GlideRecord("u_appointment");
+        gr.addQuery("u_status", "overdue");
+        gr.query();
+        while (gr.next(id)) {
+            gr.u_status = 'cancelled';
+            gr.update();
+            gs.print(gr.getDisplayValue('number'));
+        }
+    },
+
+    allMedication: function(id) {
+        var result = [];
+        var gr = new GlideRecord("u_medication");
+        gr.addQuery("u_patient_id", id);
+        gr.query();
+        if (gr.next()) {
+            result.push({
+                sys_id: gr.getUniqueValue() + '',
+                status: gr.getDisplayValue('u_status') + '',
+                frequency: gr.getDisplayValue('u_frequency')
+            });
+        } else {
+            gs.print('No record found');
+        }
+        return result;
+    },
+
+    allLabs: function(id) {
+        var result = [];
+        var gr = new GlideRecord("u_lab_test");
+        gr.addQuery("u_patient_id", id);
+        gr.query();
+        while (gr.next()) {
+            result.push({
+                sys_id: gr.getUniqueValue() + '',
+                test_result: gr.u_test_results + '',
+                patient_id: gr.u_patient_id.getDisplayValue() + '',
+                date: gr.u_scheduled_date ? gr.u_scheduled_date.getDisplayValue() : ''
+            });
+        }
+        return result;
+    },
+
+    stausOfWard: function(id) {
+        var result = [];
+        var gr = new GlideRecord("u_ward");
+        gr.query();
+        while (gr.next()) {
+            result.push({
+                sys_id: gr.getUniqueValue() + '',
+                occupancy: gr.u_capacity + '',
+                status: gr.u_status + ''
+            });
+        }
+        return result;
+    },
+
+    allRooms: function(id) {
+        var gr = new GlideRecord("u_room");
+        gr.query();
+        while (gr.next()) {
+            gs.print(gr.u_status.getDisplayValue());
+        }
+    },
+
+    billingRecords: function(id) {
+        var result = [];
+        var gr = new GlideRecord("u_billing");
+        gr.addQuery("u_patient_id", id);
+        gr.query();
+        while (gr.next()) {
+            result.push({
+                sys_id: gr.getUniqueValue() + '',
+                amount: gr.u_total_amount + '',
+                patient: gr.u_patient_id.getDisplayValue() + '',
+                status: gr.u_status + ''
+            });
+        }
+        return result;
+    },
+
+    insurancePolicy: function(id) {
+        var result = [];
+        var gr = new GlideRecord("u_insurance");
+        gr.addQuery("u_patient_id", id);
+        gr.query();
+        while (gr.next()) {
+            result.push({
+                sys_id: gr.getUniqueValue() + '',
+                patient: gr.u_patient_id.getDisplayValue() + '',
+                details: gr.u_coverage_amount
+            });
+        }
+        return result;
+    },
+    type: 'Day4_server_side'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-24 17:08:31</sys_created_on>
+        <sys_id>07f2d27b933a6a507547327efaba1003</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Day4_server_side</sys_name>
+        <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+        <sys_update_name>sys_script_include_07f2d27b933a6a507547327efaba1003</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-24 17:08:31</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>07f2d27b933a6a507547327efaba1003</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-24 17:08:30</sys_created_on>
+        <sys_id>18326efb937a6a507547327efaba106a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-24 17:08:30</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

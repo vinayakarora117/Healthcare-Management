@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <business_calendar/>
+        <condition/>
+        <conditional>false</conditional>
+        <entered_time>1970-01-01 05:54:00</entered_time>
+        <max_drift/>
+        <name>Question1 </name>
+        <offset/>
+        <offset_type>0</offset_type>
+        <run_as display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period/>
+        <run_start>2025-07-22 23:48:34</run_start>
+        <run_time>1970-01-01 05:54:00</run_time>
+        <run_type>daily</run_type>
+        <script><![CDATA[var gr=new GlideRecord('incident');
+gr.addEncodedQuery('priority=1^state=2');
+gr.query();
+
+while(gr.next()){
+	gr.short_description='Priority high give attention';
+	gr.update();
+}]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-23 00:22:11</sys_created_on>
+        <sys_id>0d9a215b937ea6507547327efaba108f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Question1 </sys_name>
+        <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+        <sys_update_name>sysauto_script_0d9a215b937ea6507547327efaba108f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-23 00:22:11</sys_updated_on>
+        <time_zone>floating</time_zone>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>0d9a215b937ea6507547327efaba108f</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-23 00:22:11</sys_created_on>
+        <sys_id>6d42f59393bea6507547327efaba10e6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-23 00:22:11</sys_updated_on>
+        <table>sysauto_script</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

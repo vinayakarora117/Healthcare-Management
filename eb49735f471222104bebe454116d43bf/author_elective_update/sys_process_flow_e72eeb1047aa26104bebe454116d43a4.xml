@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_process_flow">
+    <sys_process_flow action="DELETE">
+        <active>true</active>
+        <condition table="u_appointment">u_status=completed^EQ<item display_value="Completed" endquery="false" field="u_status" goto="false" newquery="false" operator="=" or="false" value="completed"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
+        <description/>
+        <label>Completed</label>
+        <name>Appointment Flow</name>
+        <order>20</order>
+        <sys_class_name>sys_process_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-01 15:26:36</sys_created_on>
+        <sys_id>e72eeb1047aa26104bebe454116d43a4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Appointment Flow</sys_name>
+        <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+        <sys_update_name>sys_process_flow_e72eeb1047aa26104bebe454116d43a4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-01 15:26:36</sys_updated_on>
+        <table>u_appointment</table>
+    </sys_process_flow>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</application>
+        <file_path/>
+        <instance_id>34a1faef3b102e90c55a348aa4e45a70</instance_id>
+        <instance_name>dev305907</instance_name>
+        <name>sys_process_flow_e72eeb1047aa26104bebe454116d43a4</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_process_flow">
+    <sys_process_flow action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition table="u_appointment">u_status=completed^EQ<item display_value="Completed" endquery="false" field="u_status" goto="false" newquery="false" operator="=" or="false" value="completed"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
+        <description/>
+        <label>Completed</label>
+        <name>Appointment Flow</name>
+        <order>20</order>
+        <sys_class_name>sys_process_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-01 15:26:36</sys_created_on>
+        <sys_id>e72eeb1047aa26104bebe454116d43a4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Appointment Flow</sys_name>
+        <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+        <sys_update_name>sys_process_flow_e72eeb1047aa26104bebe454116d43a4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-01 15:26:36</sys_updated_on>
+        <table>u_appointment</table>
+    </sys_process_flow>
+</record_update>]]></payload>
+        <payload_hash>1421070272</payload_hash>
+        <record_name>Appointment Flow</record_name>
+        <reverted_from/>
+        <source>f4c53f2f932626107547327efaba105a</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 18:19:48</sys_created_on>
+        <sys_id>c6d5376f932626107547327efaba1086</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197fab705a00000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 18:19:48</sys_updated_on>
+        <type>Flow Formatter</type>
+        <update_guid>86d5376f48262610b0bd823432bc2786</update_guid>
+        <update_guid_history>86d5376f48262610b0bd823432bc2786:1421070272</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-23 11:42:08</sys_created_on>
+        <sys_db_object display_value="" name="sys_process_flow">sys_process_flow</sys_db_object>
+        <sys_id>0e18176c61d4400c869c80337d214010</sys_id>
+        <sys_metadata>e72eeb1047aa26104bebe454116d43a4</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Appointment Flow</sys_name>
+        <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+        <sys_scope_delete display_value="">777693b6033f4472835f22a0c4fb6961</sys_scope_delete>
+        <sys_update_name>sys_process_flow_e72eeb1047aa26104bebe454116d43a4</sys_update_name>
+        <sys_update_version display_value="sys_process_flow_e72eeb1047aa26104bebe454116d43a4">c6d5376f932626107547327efaba1086</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-23 11:42:08</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

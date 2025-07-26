@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>false</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <compiler_build/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>question19</internal_name>
+        <label_cache>[{"name":"bd51c52f-412f-4da8-9c23-b0725b98bbb0.Records","label":"1 - Look Up Records➛Insurance Records","reference":"u_insurance","reference_display":"Insurance Records","type":"records","base_type":"records","usedInstances":{"fc0084a4-b04a-42a0-b92e-7004221e2090":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"fc0084a4-b04a-42a0-b92e-7004221e2090.item.u_patient_id.u_email","label":"2 - For Each➛Insurance Record➛Patient ID➛Email","reference":"","reference_display":"Email","type":"string","base_type":"string","parent_table_name":"u_patient_record","column_name":"u_email","usedInstances":{"752c9cd5-2153-4d55-a3bf-66157d7ba1b6":["ah_to"]}},{"name":"fc0084a4-b04a-42a0-b92e-7004221e2090.item","label":"2 - For Each➛Insurance Record","reference":"u_insurance","reference_display":"Insurance","type":"reference","base_type":"reference","usedInstances":{"752c9cd5-2153-4d55-a3bf-66157d7ba1b6":["record"],"178fee73-a12f-4058-acf6-3017557c2943":["record"]},"attributes":{"pills_draggable_inside_block":"true","pills_draggable_outside_block":"false"}}]</label_cache>
+        <latest_snapshot/>
+        <master_snapshot/>
+        <master_snapshot_digest/>
+        <name>Question19</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>draft</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-24 09:36:21</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>85ba303f93726a507547327efaba10e5</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Question19</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+        <sys_update_name>sys_hub_flow_85ba303f93726a507547327efaba10e5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-24 10:17:56</sys_updated_on>
+        <type>flow</type>
+        <updation_source/>
+        <version>2</version>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=85ba303f93726a507547327efaba10e5"/>
+    <sys_variable_value action="delete_multiple" query="document_key=85ba303f93726a507547327efaba10e5"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=85ba303f93726a507547327efaba10e5"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=85ba303f93726a507547327efaba10e5^sys_idNOT IN01ba303f93726a507547327efaba10e6"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>85ba303f93726a507547327efaba10e5</id>
+        <name>Question19</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-24 09:36:21</sys_created_on>
+        <sys_id>01ba303f93726a507547327efaba10e6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-24 09:36:21</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=01ba303f93726a507547327efaba10e6"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=85ba303f93726a507547327efaba10e5"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=85ba303f93726a507547327efaba10e5"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=85ba303f93726a507547327efaba10e5"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=85ba303f93726a507547327efaba10e5^sys_idNOT IN26724d7793b26a507547327efaba1071"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Question19">85ba303f93726a507547327efaba10e5</flow>
+        <generation_source/>
+        <name>Daily</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-24 10:10:19</sys_created_on>
+        <sys_id>26724d7793b26a507547327efaba1071</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-24 10:17:56</sys_updated_on>
+        <trigger_definition display_value="Daily">89142dc0c32222002841b63b12d3ae8a</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/31STUvDQBD9K7LnGjatVs1NEMGDFrT0IhImu5N2Yb/cbGqj+N+dTdKiVQx7mTczb9575PmDaahQs4ItlUE2YcpGDBb0svNI6ForiWUcegashOhCx4oYWpywOjizROM1RBquQTcEuiAxsCLnfMK2oFt86po7SVzEYMEk1pGv71KZX13wU57TO8nnBef0qCtVQ8Td6t8hsVFaBrSseH6ZMA+BDsR0/uOopZKCGcgzlIKL2ZQ+zqeXZ3k1n1X5VM4A8ZwIj+L4KTj+Ecp3u7iLaCXKQxa/EgsIcmF1d5jYUOBDNgZ2jXrHkSpgjSRe4NA8lOUYywCLjVMCFz4qZwckQqXHHeF0a+zD4CAFijW0Ou4DJaRtiA990pxUjJLqp417e9wfvFW2Nzg2tROgDxXEGFTVRmxS4qjREFFpwHtl16UPbqv6ZdJisj62rNbujY42am0zEEl4RhFBdkv4TQ+vIKjk4p5oaPmzd1++tunu4GNUXA6maaARQfl4TXTb/Y/4+fIFGJRTY90CAAA=</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>daily</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=85ba303f93726a507547327efaba10e5^sys_idNOT IN4e34013b93b26a507547327efaba106d,5634013b93b26a507547327efaba1072,9634013b93b26a507547327efaba1071"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Question19">85ba303f93726a507547327efaba10e5</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-24 10:17:56</sys_created_on>
+        <sys_id>4e34013b93b26a507547327efaba106d</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-24 10:17:56</sys_updated_on>
+        <ui_id>bd51c52f-412f-4da8-9c23-b0725b98bbb0</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/9VXXU/bMBT9K1WeNimqEloK69MmEBIPUAnQXhCynMRpvTl2Zjv9APHfdx3HadoGKKVj8Ojr+3Hu8bmOc/vg0cQbesdpPwhweHh8FAS9XhAMBr0Yh1HUG8RREPUjz/c4zgh4ahwxAsspZoVZF4hyVUjMY2NNqMoZXvysNs8bW/GEskQS7g1v73wvxxLyaSK94cPall7kBDEcEQYZbky5zqWp7W8NdSV4E7op4JaI29RCJgZL4HtkrglPCJRKMVPE9zLME6yFXNQWSXAy4mxpmFCuIaNnnOeK3kP648D4pQTaiondq5eoosma44mgMRnlmgpuLRao3RSsyPilbcAQTFJcMO0IBkuhIB/JDWYDokKUXk/E7MoVPKO8bK/aZCLGrF5hrSWNCk2UOQvCSAaJUIbznPIxyqWY0jIYsGTdMYNFN2ViBkUVHfMujg3wLlCEu2dgPy3NP7GkposLSAPBAIgyOG1kSVeikCUrUxSzQpUboBNlc3mPJVfoT2FQ2q6r/pClCBxULGmuf0DAlFStPPpbqfkwWEoiFjyhpqZakTSZ51QuEPRERpc3IhNSitn3X3iKbdnhWHUjMqacA0Wj1Hl8+brmA6Cbu5sD8i9L7TZwJ01GtmWzNbiN4mr0VmzV6IV7Gz2A+5+GT8vi483eS9NkG35hpOKjZ0VwuDxvJaRGlrnGTG1Kf2eFnlHCkpVPwhbgXPDIiK0TLZ7CWwk0NTXWvg0Hn/7b8EZ5pgmyvFDOKC8/oZAQynxg3QbPX17f1nRQHv9StaUNLtlN9eKOFp373W/Z8lydfrcA6QKvAVHnxqJsAe7uV5e+km5vb9LtHbxOuiCc24cafc1aC8HuBWaOzvnfG3+87g8iagSEj3e19E92qxm+tuaBqbk2m71XDWdTWXbn9AmB7fl9985D7JuCEwit6iE7rGhGkzHRy+rOKxF6htnvtv1KXfUMle29+a3Yf3b2BuFyzmAGkCQKjqr5WAzhsbF5PYS+Ne92O5xzTcYledtCdJEXeN65qjG2Aq+uCFrXqDTd3+P76z0+b4741ulx/H+Kn6NdJXz3F4AIFi2+DwAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=4e34013b93b26a507547327efaba106d"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Question19">85ba303f93726a507547327efaba10e5</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>fc0084a4-b04a-42a0-b92e-7004221e2090</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-24 10:17:56</sys_created_on>
+        <sys_id>5634013b93b26a507547327efaba1072</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-24 10:17:56</sys_updated_on>
+        <ui_id>178fee73-a12f-4058-acf6-3017557c2943</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UTWvbQBD9K0ZnW6w+4tq+FYwhhyaQllzSIEbakb2wWqn74cQ1/u/dlVaOnaSuCYZSqG4zmpn33sxjH7YBo8EsSJGSaBqNiyRKkpiQeJJG+TjJo5gmgBgFw0BAhbZSYlFLauM1cOMS221ZEDJJIR3lJIVRGgMZ5dMYR58ISeM4wphMScg0Vrud7aNMNRw2977dZooV41SiCGYPj8OgAWmRNMpgtn31S28azDjkyG3jvC5MhUIPrud2xrkq+u67XsZrWQ7DxtRPz5hL2l+OT0SGAT5rFBQtXAlc4TCoQFDQtdwEMy2NTUgEeiv4Zl+xYkJ3Sit4VuynnZ8SV1eilVb4LezDzG+oX07NCrxtNKtFl9GQ835zNTeVuOkkuN1iCYbrg90aZedh4yg7Eh3D8uuqfrrr8RZMtOo8W14XwPcRaC1ZbjQqdw7k2C6lgqZhYpk1sl6zttlSqcIlt0FY8vrJYiq2FCEUjndoFwThwubnbfoeJHMivtgxtnnXis9+GIfbyfCEs1ZzKzhrD2VLVSFZoz/bwWv0NHdDb+P86pQBiunLvQ9mvljZZEwoI8Hd5I1Rrw9+fcyx3xzm4KbDPJfvUfNv+HvPHuW8Za8uZtnJX7KsZ/SPefZPTiXxyafq4NKtOdWRSyVWrf5MadBGfTeEJFS5bb1x7eniD/oYKwuhcdCBDM9W1A9YMORUvSOxN7IHyNYeYP/+XszN0Zi03/9n+ILP8OMv/FUaW08IAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=5634013b93b26a507547327efaba1072"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent display_value="Send Email">98c181d20b100300d97d8bf637673ab5</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Question19">85ba303f93726a507547327efaba10e5</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>fc0084a4-b04a-42a0-b92e-7004221e2090</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-24 10:17:56</sys_created_on>
+        <sys_id>9634013b93b26a507547327efaba1071</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-24 10:17:56</sys_updated_on>
+        <ui_id>752c9cd5-2153-4d55-a3bf-66157d7ba1b6</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Y3W7bNhR+FULXtiLLsh2nV12DoAHWFmiN9qIpBIqibK6UqFFUHC/wu+xZ9mQ7lKi/OFEMOws6wFeGDnn+v4+H9Pd7i4XWheWF5840iDw8c8bu2HHO3fk8GM8j53w2d0YktAZWgmMKOyUlQurvW8xzLbi/jwgoeNgbBo6Hh56LnWEwd+lw5jie646o68wdmykab7egF7Is5Xjz1aiDhKwYDyVNrIvvPwZWiiV4UlRaF/cPltQmpT7HAeWgeClIHtNEoetLsLFvFpX2AsslVehzlc3D7LQr+A6NE59pISzpsJyBRe8UTUIKTiPMMzqwYpyEWAm5qSWS4vBTwhvBiiUKTL7NMkEYVjRDakURjTHjaM3UCmFUurctbe8uY39BCGNXm4ooFIHoiFhCWAgRWS2xb2oKy9fNMlkJRuinVDGRlIVWOOBVzQXP4+RjmbXuCo1wzlWrK3kGdmmq09RxK5lDDtGXlVh/rvxesaQoiEmQC4J5/YWVkizIIc+ikZxi2djzi5C0TfBEOS1qHOM0ZcnST6W4ZYVhCDO2lxw+7IiLNehnbJnYmOicbCg4tq9AflmIv2LJdIIfwAwob4sC+X/mOqYyxa5zvdcv+g5bMyJZqt6C4VtqUtgODDlG8z5YhV4Dn5bNhiC5z5Isl1j3bwf+162lw3iw0D7Rx9LnvvF2lJ+I31CgIzMMGB3FgAXAXpX8KwGPlAmjRv2500X9E2h/cZSbQA+G+X8DZehr5pcINbkVzp+F+HPAdqbTIJgGk9m4AcqcROEsiKZ4RsYNMNZwXskYy59+cV610D3axbSh9YFwBuWzqyK9wd5RVspw+vE8pOhbFW5fBgbfgRBwNiUNuN2jwF0iESmBoHd8A4d67VkLmyNfrbBCLEMZtMtGC4GYCb6lMUAbkaM4zxRsU7DSoU1nTnivwhjTWiO9fLTv/wtKHUudSf8Zixvg4ZWvxGH3JTv3U6xYef+AjwI42y3apdzLGD2MsV+gW8myYusehampLnarZEiZVTYNJ8f9nCwvJzuUbI0T5zRQOgMlpJzFrGhuydtjCRH29p06nVYT0iLEC74JulDcI6RK8d273fiegKJ32Hg4YfH1sDjqfQfSaafXweuAcY+YKsXfHqAx6IPj5ATHXx2Ok/7Wk06zszz4gxLVgmT9RIRrX0LXmMNvXJTJ7nlPPrr5RQb889nUinUuj+X3BKCnp1H/K110cW+7I7d7Uolw00LuTe44Y5IiHeFQsWQTEyqFUAGU4WexGN5YN+U2+p7pX3eaBFn6ptQMZLkEjyCJ6j9R9KNpKaBC+j1F71ImqV3uP0vL/bu0MJFUnv75u3KAzg52cRiZ3i8+/F5RaY/a1jOhrOxOqQ2JVirmDYVmR86E6WQynp5I1B4K6Tp0QynS1OR21GD48S+Bnib6dxcAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=9634013b93b26a507547327efaba1071"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=85ba303f93726a507547327efaba10e5"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=85ba303f93726a507547327efaba10e5^sys_idNOT INd634013b93b26a507547327efaba106f"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">ce34013b93b26a507547327efaba106e</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Question19">85ba303f93726a507547327efaba10e5</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-24 10:17:56</sys_created_on>
+        <sys_id>d634013b93b26a507547327efaba106f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-24 10:17:56</sys_updated_on>
+        <ui_id>fc0084a4-b04a-42a0-b92e-7004221e2090</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/51TTW/bMAz9Lzonhj+aLM6twFCgh61AV/QyFAYl0YkwWdIkOaln+L+Pip1s6GnYxTYfycf3RHlkto+uj+HF3oegDobtv7+tmDIJo++RKcn2rKhlWxd5LapyW5V5Xu7uCr6teFHKClBu2YoZ6JAqVcQuUHgC3ad4HLncFGJTtuu7Ij0k7Na1KKs1zz+VG17vOOd59ozCehmmiVqlCk7D8Pr/DOKotPS4mHHgSVtEz/bjh1QcHDYaOGoatDBQ/796vnY+LqY/nEFip9DfeOmVVJT5iuF7RCORBrWgA65YB0ZCtH5g++h7AjyCfDJ6uFUclYlEx1Lte1C/iLvI81TYIjkSOCdvYbMc5AyLo1UCn1xU1sxIBK6XHmF135mvs/y0Amyh1/G6AkL6QHzokuakYpHUfjva8/N14IMyF39LUlsB+hZBjF7xPmJIa0CNHRE1HTinzKFx3p7UpZm0dNlBU5C12p5paLqWGYgkPKMjguyB8M8X+BW8Si6+EA01Txf3zc8+zZ19LIqb2TQVBOGVi/dEd8JF3PSW7uvMFOaLIVGoQANfEvZ4/RtSYqAlK/E3dLb+R5L6B5t+A1rroVZXAwAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=85ba303f93726a507547327efaba10e5"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=85ba303f93726a507547327efaba10e5"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_85ba303f93726a507547327efaba10e5"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_85ba303f93726a507547327efaba10e5"/>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=85ba303f93726a507547327efaba10e5"/>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=85ba303f93726a507547327efaba10e5"/>
+</record_update>

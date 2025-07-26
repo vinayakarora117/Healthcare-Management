@@ -11,131 +11,130 @@
         <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[var PatientUtilsPractice = Class.create();
 PatientUtilsPractice.prototype = {
-    initialize: function() {
+    initialize: function() {},
+    patientDetails: function(id) {
+        var gr = new GlideRecord('u_patient_record');
+        if (gr.get(id)) {
+            return gr;
+        }
+        return null;
     },
-	patientDetails:function(id){
-		var gr=new GlideRecord('u_patient_record');
-		if(gr.get(id)){
-			return gr;
-		}
-		return null;
-	},
 
-	isVIP:function(id){
-		var gr=new GlideRecord('u_patient_record');
-		if(gr.get(id)){
-			gr.u_vip=='true' || gr.u_vip==true;
-		}
-		return false;
-	},
+    isVIP: function(id) {
+        var gr = new GlideRecord('u_patient_record');
+        if (gr.get(id)) {
+            return gr.u_vip == 'true' || gr.u_vip == true;
+        }
+        return false;
+    },
 
-	patientAge:function(id){
-		var gr=new GlideRecord('u_patient_record');
-		if(gr.get(id)){
-			var dob=new GlideDateTime('gr.u_date_of_birth');
-			var today=new GlideDateTime();
-			var diff=dob.getNumericValue()-today.getNumericValue();
-			var millinYear=1000*60*60*24*365.25;
-			return Math.floor(diff/millinYear);
-		}
-	},
+    patientAge: function(id) {
+        var gr = new GlideRecord('u_patient_record');
+        if (gr.get(id)) {
+            var dob = new GlideDateTime(gr.u_date_of_birth);
+            var today = new GlideDateTime();
+            var diff = today.getNumericValue() - dob.getNumericValue();
+            var millinYear = 1000 * 60 * 60 * 24 * 365.25;
+            return Math.floor(diff / millinYear);
+        }
+    },
 
-	patientAppointment:function(id){
-		var result=[];
-		var gr = new GlideRecord("u_appointment");
-		gr.addQuery("u_patient_id", id);
-		gr.query();
-		if (gr.next()) {
-		   result.push({
-			sys_id:gr.getUniqueValue(),
-			date:gr.u_appointment_date+' ',
-			status:gr.u_status+' '
-		   });
-		}
-		return result;
-	},
+    patientAppointment: function(id) {
+        var result = [];
+        var gr = new GlideRecord("u_appointment");
+        gr.addQuery("u_patient_id", id);
+        gr.query();
+        while (gr.next()) {
+            result.push({
+                sys_id: gr.getUniqueValue(),
+                date: gr.u_appointment_date + ' ',
+                status: gr.u_status + ' '
+            });
+        }
+        return result;
+    },
 
-	patientMedication:function(id){
-		var result=[];
-		var gr=new GlideRecord('u_medication');
-		gr.addQuery('u_patient_id',id);
-		gr.query();
-		if(gr.next()){
-			result.push({
-				sys_id: gr.getUniqueValue(),
+    patientMedication: function(id) {
+        var result = [];
+        var gr = new GlideRecord('u_medication');
+        gr.addQuery('u_patient_id', id);
+        gr.query();
+        while (gr.next()) {
+            result.push({
+                sys_id: gr.getUniqueValue(),
                 name: gr.u_medication_name + '',
                 dosage: gr.u_dosage + '',
                 frequency: gr.u_frequency + '',
                 start_date: gr.u_start_date ? gr.u_start_date.getDisplayValue() : '',
                 end_date: gr.u_end_date ? gr.u_end_date.getDisplayValue() : ''
-			});
-		}
-		return result;
-	},
+            });
+        }
+        return result;
+    },
 
-	patientLab:function(id){
-		var result=[];
-		var gr = new GlideRecord("u_lab_test");
-		gr.addQuery("u_patient_id", id);
-		gr.query();
-		if (gr.next()) {
-		result.push({
-			sys_id: gr.getUniqueValue(),
-            test_type: gr.u_test_type + '',
-            scheduled_date: gr.u_scheduled_date ? gr.u_scheduled_date.getDisplayValue() : '',
-            status: gr.u_status + '',
-            results: gr.u_results + ''
-		});
-		}
-		return result;
-	},
+    patientLab: function(id) {
+        var result = [];
+        var gr = new GlideRecord("u_lab_test");
+        gr.addQuery("u_patient_id", id);
+        gr.query();
+        while (gr.next()) {
+            result.push({
+                sys_id: gr.getUniqueValue(),
+                test_type: gr.u_test_type + '',
+                scheduled_date: gr.u_scheduled_date ? gr.u_scheduled_date.getDisplayValue() : '',
+                status: gr.u_status + '',
+                results: gr.u_results + ''
+            });
+        }
+        return result;
+    },
 
-	patientBill:function(id){
-		var result=[];
-		var gr = new GlideRecord("u_billing");
-		gr.addQuery("u_patient_id",id);
-		gr.query();
-		if (gr.next()) {
-		result.push({
-			sys_id:  gr.getUniqueValue(),
-            amount:  gr.u_total_amount + '',
-            date:    gr.u_billing_date ? gr.u_billing_date.getDisplayValue() : '',
-            status:  gr.u_payment_status + ''
-        });
-		}
-		return result;
-	},
+    patientBill: function(id) {
+        var result = [];
+        var gr = new GlideRecord("u_billing");
+        gr.addQuery("u_patient_id", id);
+        gr.query();
+        while (gr.next()) {
+            result.push({
+                sys_id: gr.getUniqueValue(),
+                amount: gr.u_total_amount + '',
+                date: gr.u_billing_date ? gr.u_billing_date.getDisplayValue() : '',
+                status: gr.u_payment_status + ''
+            });
+        }
+        return result;
+    },
 
-	patientInsurance:function(id){
-		var result=[];
-		var gr = new GlideRecord("u_insurance");
-		gr.addQuery("u_patient_id", id);
-		gr.query();
-		if (gr.next()) {
-		result.push({
-			sys_id:           gr.getUniqueValue(),
-            policy_number:    gr.u_policy_number + '',
-            provider:         gr.u_insurance_provider + '',
-            coverage:         gr.u_coverage_details + '',
-            expiry_date:      gr.u_expiry_date ? gr.u_expiry_date.getDisplayValue() : ''
-		});
-		}
-		return result;
-	},
+    patientInsurance: function(id) {
+        var result = [];
+        var gr = new GlideRecord("u_insurance");
+        gr.addQuery("u_patient_id", id);
+        gr.query();
+        while (gr.next()) {
+            result.push({
+                sys_id: gr.getUniqueValue(),
+                policy_number: gr.u_policy_number + '',
+                provider: gr.u_insurance_provider + '',
+                coverage: gr.u_coverage_details + '',
+                expiry_date: gr.u_expiry_date ? gr.u_expiry_date.getDisplayValue() : ''
+            });
+        }
+        return result;
+    },
     type: 'PatientUtilsPractice'
 };]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-14 22:04:42</sys_created_on>
         <sys_id>249967ec93b26a107547327efaba101d</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>PatientUtilsPractice</sys_name>
         <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
         <sys_policy/>
         <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
         <sys_update_name>sys_script_include_249967ec93b26a107547327efaba101d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-14 22:04:42</sys_updated_on>
+        <sys_updated_on>2025-07-24 18:11:36</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>249967ec93b26a107547327efaba101d</id>
