@@ -13,11 +13,17 @@
 PatientUtilsPractice.prototype = {
     initialize: function() {},
     patientDetails: function(id) {
+		var result=[];
         var gr = new GlideRecord('u_patient_record');
         if (gr.get(id)) {
-            return gr;
+            result.push({
+				sys_id:gr.getUniqueValue()+'',
+				name:gr.u_first_name+''+gr.u_last_name,
+			});
+			//return gr;
         }
-        return null;
+        return result;
+		//return null;
     },
 
     isVIP: function(id) {
@@ -127,14 +133,14 @@ PatientUtilsPractice.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-14 22:04:42</sys_created_on>
         <sys_id>249967ec93b26a107547327efaba101d</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>PatientUtilsPractice</sys_name>
         <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
         <sys_policy/>
         <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
         <sys_update_name>sys_script_include_249967ec93b26a107547327efaba101d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-24 18:11:36</sys_updated_on>
+        <sys_updated_on>2025-07-28 14:50:37</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>249967ec93b26a107547327efaba101d</id>

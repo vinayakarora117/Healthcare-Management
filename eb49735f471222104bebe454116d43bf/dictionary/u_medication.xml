@@ -17,5 +17,6 @@
                 <element inactive_on_update="false" label="In Progress" sequence="2" value="in progress"/>
             </choice>
         </element>
+        <element label="Available Quantity" max_length="40" name="u_available_quantity" type="integer"/>
     </element>
 </database>

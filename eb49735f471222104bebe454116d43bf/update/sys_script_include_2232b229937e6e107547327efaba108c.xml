@@ -4,7 +4,7 @@
         <active>true</active>
         <api_name>global.BillingUtilsPractice</api_name>
         <caller_access/>
-        <client_callable>false</client_callable>
+        <client_callable>true</client_callable>
         <description/>
         <mobile_callable>false</mobile_callable>
         <name>BillingUtilsPractice</name>
@@ -55,7 +55,7 @@ BillingUtilsPractice.prototype = {
 		var gr=new GlideRecord('u_billing');
 		gr.addQuery('u_patient_id',id);
 		gr.query();
-		while(gr.get(id)){
+		while(gr.next()){
 			result.push({
 				sys_id:gr.getUniqueValue(),
 				total_amount:gr.u_total_amount+'',
@@ -70,14 +70,14 @@ BillingUtilsPractice.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-17 21:27:10</sys_created_on>
         <sys_id>2232b229937e6e107547327efaba108c</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>BillingUtilsPractice</sys_name>
         <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
         <sys_policy/>
         <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
         <sys_update_name>sys_script_include_2232b229937e6e107547327efaba108c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-17 21:27:10</sys_updated_on>
+        <sys_updated_on>2025-07-29 01:20:25</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>2232b229937e6e107547327efaba108c</id>

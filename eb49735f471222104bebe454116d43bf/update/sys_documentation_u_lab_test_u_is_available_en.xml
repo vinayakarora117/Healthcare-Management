@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="u_is_available" label="Is Available" language="en" table="u_lab_test">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_is_available</element>
+            <help/>
+            <hint/>
+            <label>Is Available</label>
+            <language>en</language>
+            <name>u_lab_test</name>
+            <plural>Is Availables</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-07-28 14:47:25</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Is Available</sys_name>
+            <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+            <sys_update_name>sys_documentation_u_lab_test_u_is_available_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-07-28 14:47:25</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>
