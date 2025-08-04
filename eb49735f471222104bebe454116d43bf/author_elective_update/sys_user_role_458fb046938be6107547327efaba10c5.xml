@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
+    <sys_user_role action="DELETE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description/>
+        <elevated_privilege>false</elevated_privilege>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>Lab Technician</name>
+        <scoped_admin>false</scoped_admin>
+        <suffix/>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-31 09:44:22</sys_created_on>
+        <sys_id>458fb046938be6107547327efaba10c5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Lab Technician</sys_name>
+        <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+        <sys_update_name>sys_user_role_458fb046938be6107547327efaba10c5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-31 09:44:22</sys_updated_on>
+    </sys_user_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</application>
+        <file_path/>
+        <instance_id>34a1faef3b102e90c55a348aa4e45a70</instance_id>
+        <instance_name>dev305907</instance_name>
+        <name>sys_user_role_458fb046938be6107547327efaba10c5</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role"><sys_user_role action="INSERT_OR_UPDATE"><assignable_by/><can_delegate>true</can_delegate><description/><elevated_privilege>false</elevated_privilege><grantable>true</grantable><includes_roles/><name>Lab Technician</name><scoped_admin>false</scoped_admin><suffix/><sys_class_name>sys_user_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-07-31 09:44:22</sys_created_on><sys_id>458fb046938be6107547327efaba10c5</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Lab Technician</sys_name><sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package><sys_policy/><sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope><sys_update_name>sys_user_role_458fb046938be6107547327efaba10c5</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-07-31 09:44:22</sys_updated_on></sys_user_role></record_update>]]></payload>
+        <payload_hash>-722341355</payload_hash>
+        <record_name>Lab Technician</record_name>
+        <reverted_from/>
+        <source>13f573ab932626107547327efaba100d</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-31 09:44:22</sys_created_on>
+        <sys_id>eeaf7446938be6107547327efaba10d2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1985fde52580000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-31 09:44:22</sys_updated_on>
+        <type>Role</type>
+        <update_guid>e2af7446098be610a4bca85ddd35fcd2</update_guid>
+        <update_guid_history>e2af7446098be610a4bca85ddd35fcd2:-722341355</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Lab Technician">93cfb446938be6107547327efaba10ea</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-31 09:44:58</sys_created_on>
+        <sys_db_object display_value="" name="sys_user_role">sys_user_role</sys_db_object>
+        <sys_id>30c66d4e15ee41ff9ac8a13854208391</sys_id>
+        <sys_metadata>458fb046938be6107547327efaba10c5</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Lab Technician</sys_name>
+        <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
+        <sys_scope_delete display_value="">777693b6033f4472835f22a0c4fb6961</sys_scope_delete>
+        <sys_update_name>sys_user_role_458fb046938be6107547327efaba10c5</sys_update_name>
+        <sys_update_version display_value="sys_user_role_458fb046938be6107547327efaba10c5">eeaf7446938be6107547327efaba10d2</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-31 09:44:58</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

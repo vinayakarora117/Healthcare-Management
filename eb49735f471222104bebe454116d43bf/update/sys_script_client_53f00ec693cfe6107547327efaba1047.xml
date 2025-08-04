@@ -4,35 +4,42 @@
         <applies_extended>false</applies_extended>
         <condition/>
         <description/>
-        <field/>
+        <field>state</field>
         <global>true</global>
         <isolate_script>true</isolate_script>
         <messages/>
-        <name>Question1</name>
+        <name>10</name>
         <order/>
-        <script><![CDATA[function onLoad() {
-   if(g_form.isNewRecord()){
-	g_form.addInfoMessage("Welcome to patient form");
-   }
-}]]></script>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue == '') {
+        return;
+    }
+
+    if (newValue == 'Resolved') {
+        g_form.setDisabled('impact', true);
+    } else {
+        g_form.setDisabled('impact', false);
+    }
+}
+]]></script>
         <sys_class_name>sys_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-07-18 05:08:11</sys_created_on>
+        <sys_created_on>2025-07-31 14:32:00</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>8a7109f5933aae107547327efaba108d</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>Question1</sys_name>
+        <sys_id>53f00ec693cfe6107547327efaba1047</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>10</sys_name>
         <sys_overrides/>
         <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
         <sys_policy/>
         <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
-        <sys_update_name>sys_script_client_8a7109f5933aae107547327efaba108d</sys_update_name>
+        <sys_update_name>sys_script_client_53f00ec693cfe6107547327efaba1047</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-31 19:42:14</sys_updated_on>
-        <table>u_patient_record</table>
-        <type>onLoad</type>
-        <ui_type>10</ui_type>
+        <sys_updated_on>2025-07-31 19:41:33</sys_updated_on>
+        <table>incident</table>
+        <type>onChange</type>
+        <ui_type>0</ui_type>
         <view/>
     </sys_script_client>
 </record_update>

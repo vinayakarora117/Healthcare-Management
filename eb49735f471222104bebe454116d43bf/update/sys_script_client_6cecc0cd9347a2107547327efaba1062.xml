@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
     <sys_script_client action="INSERT_OR_UPDATE">
-        <active>true</active>
+        <active>false</active>
         <applies_extended>false</applies_extended>
         <condition/>
         <description/>
@@ -12,7 +12,8 @@
         <order/>
         <script><![CDATA[function onLoad() {
     var ga = new GlideAjax('AppointmentUtilsPractice');
-    ga.addParam('sysparm_name', 'getMyDepartment');
+    ga.addParam('sysparm_name', 'byDepartment');
+	//ga.addParam('sysparm_department',departmentName);
     ga.getXMLAnswer(function(response) {
         if (response) {
             g_form.addInfoMessage("Your department is: " + response);
@@ -28,7 +29,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>6cecc0cd9347a2107547327efaba1062</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>7</sys_name>
         <sys_overrides/>
         <sys_package display_value="Healthcare Management " source="eb49735f471222104bebe454116d43bf">eb49735f471222104bebe454116d43bf</sys_package>
@@ -36,8 +37,8 @@
         <sys_scope display_value="Healthcare Management ">eb49735f471222104bebe454116d43bf</sys_scope>
         <sys_update_name>sys_script_client_6cecc0cd9347a2107547327efaba1062</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-28 03:40:09</sys_updated_on>
-        <table/>
+        <sys_updated_on>2025-07-31 19:27:07</sys_updated_on>
+        <table>u_appointment</table>
         <type/>
         <ui_type>0</ui_type>
         <view/>
